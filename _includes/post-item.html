@@ -1,6 +1,6 @@
 <a href="{{ post.url | prepend: site.baseurl }}" class="catalogue-item">
     <div>
-      <time id="date:{{post.title}}" datetime="{{ post.date }}" class="catalogue-time">hel</time>
+      <time id="post:{{post.title}}" datetime="{{ post.date }}" class="catalogue-time">hel</time>
       <h1 class="catalogue-title">{{ post.title }}</h1>
       <div class="catalogue-line"></div>
 
@@ -10,9 +10,9 @@
 
     </div>
     <script>
-      // var date = '{{post.date}}'
-      // moment.loadPersian(true);
-      // var jalaliDate = moment(date, 'YYYY-M-D HH:mm:ss TZD').format('ddd jD jMMMM jYYYY');
-      document.getElementById("post:{{post.title}}").innerText = "farhad";
+      var date = '{{post.date}}'
+      moment.loadPersian(true);
+      var jalaliDate = moment(date, 'YYYY-M-D HH:mm:ss TZD').format('jD jMMMM jYYYY');
+      document.getElementById('post:{{post.title}}').innerText = jalaliDate;
   </script>
   </a>
